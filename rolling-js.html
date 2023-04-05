@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ol, ul, li {
+	list-style: none;
+}
+
+.wrap{
+    display: flex;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+}
+        .banner {
+    display: flex;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 180px;
+    color:#F4F2F1;
+    letter-spacing:60px;
+
+
+}
+
+
+.container.original {
+	animation: rollingleft1 33s linear infinite;
+}
+.container.clone {
+	animation: rollingleft2 33s linear infinite;
+}
+
+@keyframes rollingleft1 {
+	0% { transform: translateX(0); }
+	50% { transform: translateX(-100%); }
+	50.01% { transform: translateX(100%); }
+	100% { transform: translateX(0); }
+}
+
+@keyframes rollingleft2 {
+	0% { transition: translateX(0); }
+	100% { transform: translateX(-200%); }
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="container">
+            <li class="banner">HELLO!JAVASCRIPT</li>
+        </ul>
+    </div>
+
+
+    <script>
+        let roller=document.querySelector('.container');
+        let clone=roller.cloneNode(true);
+
+        document.querySelector('.wrap').appendChild(clone);
+
+        roller.classList.add('original');
+        clone.classList.add('clone');
+    </script>
+</body>
+</html>
