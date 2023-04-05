@@ -2,6 +2,8 @@
 
 
 
+바로보기 : https://sseozero.github.io/js-rollingTest/
+
 
 
 - index.html
